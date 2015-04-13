@@ -1,10 +1,12 @@
-package com.example.moumoutsay.smsmessagerwithgeo;
+package com.example.moumoutsay.smsmessagerwithgeo.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.moumoutsay.smsmessagerwithgeo.R;
 
 /**
  * A placeholder fragment containing a simple view.
