@@ -9,6 +9,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * Created by moumoutsay on 4/13/15.
@@ -78,6 +79,9 @@ public class GPSInfo extends Service implements LocationListener {
 
         } catch (Exception e) {
             Log.d(LOG_TAG, "Can not get Location" + e);
+            Toast.makeText(context,
+                    "Can not get Location because" + e + "\n, please check setting and try again",
+                    Toast.LENGTH_LONG).show();
             return null;
         }
         return location;

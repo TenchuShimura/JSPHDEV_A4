@@ -2,8 +2,10 @@ package com.example.moumoutsay.smsmessagerwithgeo.ui.listener;
 
 import android.app.Activity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.moumoutsay.smsmessagerwithgeo.R;
 import com.example.moumoutsay.smsmessagerwithgeo.model.GPSInfo;
 
 /**
@@ -23,9 +25,12 @@ public class ShowGPSOnClickListener implements View.OnClickListener {
         if (gpsInfo.canGetLocation()) {
             double log = gpsInfo.getLongitude();
             double lat = gpsInfo.getLatitude();
-            Toast.makeText(act.getApplicationContext(),
-                    "Location:\n\tLongitude" + log + "\n\tLatitude" + lat,
-                    Toast.LENGTH_LONG).show();
+            TextView tv = (TextView) act.findViewById(R.id.text_show_location);
+            tv.setText("Location:\n\t\tLongitude: " + log + "\n\t\tLatitude: " + lat);
+
+//            Toast.makeText(act.getApplicationContext(),
+//                    "Location:\n\tLongitude: " + log + "\n\tLatitude: " + lat,
+//                    Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(act.getApplicationContext(),
                     "Can not get gpsInfo",

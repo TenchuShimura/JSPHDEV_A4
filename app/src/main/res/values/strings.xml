@@ -2,5 +2,6 @@
     <string name="app_name">"SMSMessagerWithGEO "</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="show_location">Show Location</string>
+    <string name="send_location">Send Location</string>
+    <string name="pseudo_location">"Location:\n\t\tLongitude: NA\n\t\tLatitude: NA" </string>
 </resources>
