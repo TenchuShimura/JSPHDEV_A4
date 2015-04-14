@@ -1,4 +1,4 @@
-package com.example.moumoutsay.smsmessagerwithgeo.ui;
+package com.example.moumoutsay.smsmessagerwithgeo.ui.activity;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.moumoutsay.smsmessagerwithgeo.R;
+import com.example.moumoutsay.smsmessagerwithgeo.ui.fragment.MainFragment;
 
 
 public class MainActivity extends ActionBarActivity {

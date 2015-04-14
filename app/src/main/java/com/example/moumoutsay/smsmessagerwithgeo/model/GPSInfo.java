@@ -24,7 +24,7 @@ public class GPSInfo extends Service implements LocationListener {
     private boolean canGetLocation = false;
 
     private double latitude;
-    private double longtitude;
+    private double longitude;
     private LocationManager locationManager;
     private Location location;
 
@@ -33,7 +33,7 @@ public class GPSInfo extends Service implements LocationListener {
         getLocation();
     }
 
-    private Location getLocation() {
+    public Location getLocation() {
         try {
             locationManager = (LocationManager) context.getSystemService(LOCATION_SERVICE);
 
@@ -72,7 +72,7 @@ public class GPSInfo extends Service implements LocationListener {
 
                 if (location != null) {
                     latitude = location.getLatitude();
-                    longtitude = location.getLongitude();
+                    longitude = location.getLongitude();
                 }
             }
 
@@ -83,6 +83,39 @@ public class GPSInfo extends Service implements LocationListener {
         return location;
     }
 
+    // TODO, do we really need this function ?
+    public void stopGPS() {
+        if (locationManager != null) {
+            locationManager.removeUpdates(this);
+        }
+    }
+
+    public double getLatitude() {
+        if (location != null) {
+            latitude = location.getLatitude();
+        }
+        return latitude;
+    }
+
+    public double getLongitude() {
+        if (location != null) {
+            longitude = location.getLongitude();
+        }
+        return longitude;
+    }
+
+    public boolean isNetworkEnable() {
+        return isNetworkEnable;
+    }
+
+    public boolean issGPSEnable() {
+        return isGPSEnable;
+    }
+
+    public boolean canGetLocation() {
+        return canGetLocation;
+    }
+
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -90,12 +123,14 @@ public class GPSInfo extends Service implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
-
+        getLatitude();
+        getLocation();
     }
 
     @Override
     public void onStatusChanged(String s, int i, Bundle bundle) {
-
+        getLatitude();
+        getLocation();
     }
 
     @Override
